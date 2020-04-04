@@ -120,7 +120,6 @@ void setup() {
 // Loop function
 // ==============
 void loop() {
-
   if (raceStatus == STATUS_NO_RACE) {
     noRace();
   }
@@ -139,7 +138,6 @@ void loop() {
 }
 
 void noRace() {
-
   if (raceStatus == STATUS_NO_RACE) {
     
     // 1. Read Start button status
@@ -170,11 +168,9 @@ void noRace() {
 
     updateLcdNoRace();
   }
-  
 }
 
 void startingRace() {
-  
   if (raceStatus == STATUS_STARTING_RACE) {
 
     // 1. Read Start button status
@@ -240,7 +236,6 @@ void startingRace() {
       updateLcdRace();
     }
   }
-  
 }
 
 void setSemaphore(bool s0, bool s1, bool s2) {
@@ -254,7 +249,6 @@ void setEndRace(bool v) {
 }
 
 void race() {
-
   if (raceStatus == STATUS_RACE) {
 
     // 1. Read Start button status
@@ -326,7 +320,6 @@ void debugRaceValues(String carId, unsigned long lastTimeCar, int carLaps, int c
 }
 
 void checkEndRace() {
-
   if ((car0Laps >= lapsNumber) || (car1Laps >= lapsNumber)) {
     // Change status
     raceStatus = STATUS_NO_RACE;
@@ -337,7 +330,6 @@ void checkEndRace() {
     // Set end race flag TRUE
     flagEndRace = true;
   }
-  
 }
 
 void stopRace() {
@@ -356,7 +348,6 @@ void stopRace() {
 }
 
 void updateLcdNoRace() {
-  
   if (raceStatus == STATUS_NO_RACE) {
     
     if ((flagEndRace) && (millis() - showResultsTimer > 2000)) {
